@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer Widget</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="timerWidget" class="timer-widget">
+        <div class="widget-header" id="widgetHeader">
+            <div class="header-left">
+                <span class="widget-title">Timer</span>
+                <span class="status-indicator" id="statusIndicator"></span>
+            </div>
+            <div class="header-right">
+                <button class="icon-btn" id="minimizeBtn" title="Minimize/Maximize">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="4" y1="8" x2="12" y2="8"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="widget-content" id="widgetContent">
+            <div class="timer-display" id="timerDisplay">00:00:00.000</div>
+            
+            <div class="controls">
+                <button class="btn btn-start" id="startBtn" title="Start (Spacebar)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                    Start
+                </button>
+                <button class="btn btn-pause" id="pauseBtn" title="Pause (Spacebar)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/>
+                    </svg>
+                    Pause
+                </button>
+                <button class="btn btn-stop" id="stopBtn" title="Stop (Delete/F11)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <rect x="6" y="6" width="12" height="12"/>
+                    </svg>
+                    Stop
+                </button>
+            </div>
+
+            <div class="note-section">
+                <label for="noteInput" class="note-label">Add Note:</label>
+                <input type="text" id="noteInput" class="note-input" placeholder="Name or describe this timer session...">
+            </div>
+
+            <div class="history-section">
+                <div class="history-header">
+                    <h3>History (Last 10)</h3>
+                    <button class="btn-clear" id="clearHistoryBtn" title="Clear all history">Clear All</button>
+                </div>
+                <div class="history-list" id="historyList">
+                    <div class="empty-history">No timer records yet</div>
+                </div>
+            </div>
+
+            <div class="shortcuts-info">
+                <div class="shortcuts-title">Keyboard Shortcuts:</div>
+                <div class="shortcuts-grid">
+                    <span><kbd>Space</kbd> Play/Pause</span>
+                    <span><kbd>Delete</kbd> Stop</span>
+                    <span><kbd>Space Space</kbd> New Timer</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="widget-minimized" id="widgetMinimized">
+            <div class="mini-timer" id="miniTimer">00:00:00</div>
+            <div class="mini-controls">
+                <button class="mini-btn" id="miniPlayPause" title="Play/Pause">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </button>
+                <button class="mini-btn" id="miniStop" title="Stop">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <rect x="6" y="6" width="12" height="12"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
